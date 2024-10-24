@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases - Inteligencia Artificial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #f2c041;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px; /* Ancho máximo para el contenido */
+            margin: 0 auto; /* Centramos el contenedor */
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: justify;
+            padding: 10px; /* Añadido padding para los párrafos */
+            background-color: #ffffff; /* Fondo blanco para destacar el texto */
+            border-radius: 5px; /* Bordes redondeados para los párrafos */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        section {
+            margin-bottom: 30px; /* Espaciado entre secciones */
+            padding: 20px; /* Padding para las secciones */
+            background-color: #ffffff; /* Fondo blanco para las secciones */
+            border-radius: 5px; /* Bordes redondeados para las secciones */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para las secciones */
+        }
+        table {
+            width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+            margin: 20px auto;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #4CAF50; /* Color verde para el encabezado */
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Color claro para filas pares */
+        }
+        tr:hover {
+            background-color: #d1ffd1; /* Color al pasar el mouse */
+        }
+        pre {
+            background-color: #f8f8f8; /* Fondo claro para el código */
+            padding: 15px; /* Espacio interno */
+            border-radius: 5px; /* Bordes redondeados */
+            overflow-x: auto; /* Permite el desplazamiento horizontal */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Clases de Inteligencia Artificial</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>22/08/2024</h2>
+        <p>
+            En la primera clase vimos definiciones de Inteligencia Artificial, conceptos, objetivos, lógica,
+            se explicó el método de Alan Turing, problemas de búsqueda, métodos de búsqueda y hicimos práctica con Git.
+        </p>
+    </section>
+
+    <section>
+        <h2>29/08/2024 - Video:</h2>
+        <p>
+            Explica cómo las redes neuronales imitan el cerebro humano para reconocer patrones en imágenes. 
+            Muestra la estructura básica de una red neuronal, como las capas de entrada, ocultas y de salida. 
+            Las capas de entrada procesan los píxeles, las ocultas identifican patrones, y la de salida clasifica los dígitos. 
+            La función sigmoide normaliza las activaciones entre 0 y 1, ayudando en el reconocimiento preciso. 
+            También se menciona la importancia de ajustar los pesos y sesgos para optimizar el rendimiento de la red.
+        </p>
+    </section>
+
+    <section>
+        <h2>12/09/2024 - Clase:</h2>
+        <p>
+            En la clase se realizó la práctica en Google Colab donde trabajamos un ejercicio en el que utilizamos 
+            una herramienta llamada TensorFlow para crear un modelo que convierte temperaturas de Celsius a Fahrenheit. 
+            Primero, tenemos dos listas de datos: una con valores en grados Celsius y otra con sus equivalentes en Fahrenheit. 
+            Luego, se construye un modelo sencillo con capas que aprenden a hacer esa conversión. 
+            El modelo se entrena usando un proceso automático, donde va mejorando su precisión con cada ciclo, o "época". 
+            Después del entrenamiento, el modelo puede hacer predicciones, como convertir 100 grados Celsius a Fahrenheit. 
+            Al final, también se muestra cómo se ven las conexiones internas del modelo, lo que nos permite ver qué aprendió.
+        </p>
+    </section>
+
+<section>
+        <h2>10/10/2024 - Clase:</h2>
+        <p>
+            Mis intereses según el perfil de O*NET se orientan principalmente hacia áreas convencionales, 
+            empresariales e investigativas. Me atraen los trabajos que siguen procedimientos claros y rutinas organizadas, 
+            donde puedo manejar información y prestar atención a los detalles de manera estructurada. También me interesan los proyectos 
+            empresariales que implican tomar decisiones y asumir riesgos para lograr objetivos. Además, disfruto resolver problemas y buscar i
+            nformación a través de la investigación. Aunque tengo algunos intereses en los campos artístico, social y realista, mi preferencia 
+            es por actividades más organizadas y estructuradas, que me permitan seguir reglas y trabajar de manera eficiente.
+        </p>
+    </section>
+    
+
+    <h2 style="text-align:center;">Resultados de Búsqueda de Laberintos</h2>
+
+    <table>
+        <tr>
+            <th>Método</th>
+            <th>Grupo</th>
+            <th>Estados Explorados</th>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo A</td>
+            <td>227</td>
+        </tr>
+        <tr>
+            <td>DFS</td>
+            <td>Grupo B</td>
+            <td>265</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo A</td>
+            <td>331</td>
+        </tr>
+        <tr>
+            <td>BFS</td>
+            <td>Grupo B</td>
+            <td>319</td>
+        </tr>
+    </table>
+
+    <section>
+        <h2>Código de TensorFlow para Conversión de Temperatura</h2>
+        <pre>
+            <code>
+# Importamos las librerías necesarias
+import tensorflow as tf
+import numpy as np
+
+# Definimos los datos de entrada (Celsius) y los datos de salida (Fahrenheit)
+celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+
+# Definimos las capas de la red neuronal
+# capa = tf.keras.layers.Dense(units=1, input_shape=[1])  # Capa de salida simple (comentada)
+oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1]) # Primera capa oculta con 3 neuronas
+oculta2 = tf.keras.layers.Dense(units=3)                   # Segunda capa oculta con 3 neuronas
+salida = tf.keras.layers.Dense(units=1)                    # Capa de salida con 1 neurona
+
+# Creamos el modelo secuencial con las capas definidas
+modelo = tf.keras.Sequential([oculta1, oculta2, salida])
+
+# Compilamos el modelo especificando el optimizador y la función de pérdida
+modelo.compile(
+    optimizer=tf.keras.optimizers.Adam(0.1),   # Optimizador Adam con tasa de aprendizaje de 0.1
+    loss='mean_squared_error'                    # Función de pérdida: error cuadrático medio
+)
+
+# Comenzamos el entrenamiento
+print("Comenzando entrenamiento...")
+historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False) # Entrenamos el modelo durante 1000 épocas
+print("Modelo entrenado!")
+
+# Importamos Matplotlib para graficar la pérdida durante el entrenamiento
+import matplotlib.pyplot as plt
+plt.xlabel("# Época")                              # Etiqueta para el eje X
+plt.ylabel("Magnitud de pérdida")                  # Etiqueta para el eje Y
+plt.plot(historial.history["loss"])                # Graficamos la pérdida
+
+# Hacemos una predicción
+print("Hagamos una predicción!")
+resultado = modelo.predict([100.0])                # Realizamos una predicción para 100 grados Celsius
+print("El resultado es " + str(resultado) + " fahrenheit!")
+
+# Mostramos las variables internas del modelo
+print("Variables internas del modelo")
+#print(capa.get_weights())                          # Mostramos los pesos de la capa (comentado)
+print(oculta1.get_weights())                        # Pesos de la primera capa oculta
+print(oculta2.get_weights())                        # Pesos de la segunda capa oculta
+print(salida.get_weights())                         # Pesos de la capa de salida
+            </code>
+        </pre>
+    </section>
+
+<section>
+        <h2>Punto 5 Parcial, Codigo logic.py</h2>
+        <pre>
+            <code>
+import itertools
+
+# Clase base para representar una oración lógica
+class Sentence():
+    def evaluate(self, model):
+        """Evaluates the logical sentence."""
+        raise Exception("nothing to evaluate")  # Método que debe ser implementado por subclases
+
+    def formula(self):
+        """Returns string formula representing logical sentence."""
+        return ""  # Método que debe ser implementado por subclases
+
+    def symbols(self):
+        """Returns a set of all symbols in the logical sentence."""
+        return set()  # Método que debe ser implementado por subclases
+
+    @classmethod
+    def validate(cls, sentence):
+        """Validates that the provided object is a Sentence."""
+        if not isinstance(sentence, Sentence):
+            raise TypeError("must be a logical sentence")  # Lanza un error si no es una oración lógica
+
+    @classmethod
+    def parenthesize(cls, s):
+        """Parenthesizes an expression if not already parenthesized."""
+        def balanced(s):
+            """Checks if a string has balanced parentheses."""
+            count = 0
+            for c in s:
+                if c == "(":
+                    count += 1
+                elif c == ")":
+                    if count <= 0:
+                        return False  # Desbalanceado si se encuentra un ')' sin '(' correspondiente
+                    count -= 1
+            return count == 0  # Retorna True si todas las paréntesis están balanceadas
+
+        # Comprueba si ya está parentizado
+        if not len(s) or s.isalpha() or (
+            s[0] == "(" and s[-1] == ")" and balanced(s[1:-1])
+        ):
+            return s
+        else:
+            return f"({s})"  # Agrega paréntesis si es necesario
+
+# Clase que representa un símbolo lógico (por ejemplo, una variable)
+class Symbol(Sentence):
+    def __init__(self, name):
+        self.name = name  # Nombre del símbolo
+
+    def __eq__(self, other):
+        return isinstance(other, Symbol) and self.name == other.name  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(("symbol", self.name))  # Permite que los símbolos sean utilizados en conjuntos
+
+    def __repr__(self):
+        return self.name  # Representación en cadena del símbolo
+
+    def evaluate(self, model):
+        """Evaluates the symbol in the given model."""
+        try:
+            return bool(model[self.name])  # Retorna el valor del símbolo en el modelo
+        except KeyError:
+            raise EvaluationException(f"variable {self.name} not in model")  # Error si el símbolo no está en el modelo
+
+    def formula(self):
+        return self.name  # Retorna el nombre del símbolo como su fórmula
+
+    def symbols(self):
+        return {self.name}  # Retorna un conjunto con el símbolo
+
+# Clase que representa la negación lógica
+class Not(Sentence):
+    def __init__(self, operand):
+        Sentence.validate(operand)  # Valida que el operando sea una oración lógica
+        self.operand = operand
+
+    def __eq__(self, other):
+        return isinstance(other, Not) and self.operand == other.operand  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(("not", hash(self.operand)))  # Permite que las negaciones sean utilizadas en conjuntos
+
+    def __repr__(self):
+        return f"Not({self.operand})"  # Representación en cadena de la negación
+
+    def evaluate(self, model):
+        return not self.operand.evaluate(model)  # Evalúa la negación del operando
+
+    def formula(self):
+        return "¬" + Sentence.parenthesize(self.operand.formula())  # Retorna la fórmula de la negación
+
+    def symbols(self):
+        return self.operand.symbols()  # Retorna los símbolos del operando
+
+# Clase que representa la conjunción lógica (AND)
+class And(Sentence):
+    def __init__(self, *conjuncts):
+        for conjunct in conjuncts:
+            Sentence.validate(conjunct)  # Valida cada conjuncto
+        self.conjuncts = list(conjuncts)
+
+    def __eq__(self, other):
+        return isinstance(other, And) and self.conjuncts == other.conjuncts  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(
+            ("and", tuple(hash(conjunct) for conjunct in self.conjuncts))  # Permite que las conjunciones sean utilizadas en conjuntos
+        )
+
+    def __repr__(self):
+        conjunctions = ", ".join(
+            [str(conjunct) for conjunct in self.conjuncts]  # Representación en cadena de la conjunción
+        )
+        return f"And({conjunctions})"
+
+    def add(self, conjunct):
+        Sentence.validate(conjunct)  # Valida el nuevo conjuncto
+        self.conjuncts.append(conjunct)  # Agrega el conjuncto a la lista
+
+    def evaluate(self, model):
+        return all(conjunct.evaluate(model) for conjunct in self.conjuncts)  # Evalúa la conjunción
+
+    def formula(self):
+        if len(self.conjuncts) == 1:
+            return self.conjuncts[0].formula()  # Si hay solo un conjuncto, retorna su fórmula
+        return " ∧ ".join([Sentence.parenthesize(conjunct.formula())
+                           for conjunct in self.conjuncts])  # Retorna la fórmula de la conjunción
+
+    def symbols(self):
+        return set.union(*[conjunct.symbols() for conjunct in self.conjuncts])  # Retorna la unión de todos los símbolos
+
+# Clase que representa la disyunción lógica (OR)
+class Or(Sentence):
+    def __init__(self, *disjuncts):
+        for disjunct in disjuncts:
+            Sentence.validate(disjunct)  # Valida cada disyunto
+        self.disjuncts = list(disjuncts)
+
+    def __eq__(self, other):
+        return isinstance(other, Or) and self.disjuncts == other.disjuncts  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(
+            ("or", tuple(hash(disjunct) for disjunct in self.disjuncts))  # Permite que las disyunciones sean utilizadas en conjuntos
+        )
+
+    def __repr__(self):
+        disjuncts = ", ".join([str(disjunct) for disjunct in self.disjuncts])  # Representación en cadena de la disyunción
+        return f"Or({disjuncts})"
+
+    def evaluate(self, model):
+        return any(disjunct.evaluate(model) for disjunct in self.disjuncts)  # Evalúa la disyunción
+
+    def formula(self):
+        if len(self.disjuncts) == 1:
+            return self.disjuncts[0].formula()  # Si hay solo un disyunto, retorna su fórmula
+        return " ∨  ".join([Sentence.parenthesize(disjunct.formula())
+                            for disjunct in self.disjuncts])  # Retorna la fórmula de la disyunción
+
+    def symbols(self):
+        return set.union(*[disjunct.symbols() for disjunct in self.disjuncts])  # Retorna la unión de todos los símbolos
+
+# Clase que representa la implicación lógica
+class Implication(Sentence):
+    def __init__(self, antecedent, consequent):
+        Sentence.validate(antecedent)  # Valida el antecedente
+        Sentence.validate(consequent)  # Valida el consecuente
+        self.antecedent = antecedent
+        self.consequent = consequent
+
+    def __eq__(self, other):
+        return (isinstance(other, Implication)
+                and self.antecedent == other.antecedent
+                and self.consequent == other.consequent)  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(("implies", hash(self.antecedent), hash(self.consequent)))  # Permite que las implicaciones sean utilizadas en conjuntos
+
+    def __repr__(self):
+        return f"Implication({self.antecedent}, {self.consequent})"  # Representación en cadena de la implicación
+
+    def evaluate(self, model):
+        return ((not self.antecedent.evaluate(model))
+                or self.consequent.evaluate(model))  # Evalúa la implicación
+
+    def formula(self):
+        antecedent = Sentence.parenthesize(self.antecedent.formula())
+        consequent = Sentence.parenthesize(self.consequent.formula())
+        return f"{antecedent} => {consequent}"  # Retorna la fórmula de la implicación
+
+    def symbols(self):
+        return set.union(self.antecedent.symbols(), self.consequent.symbols())  # Retorna la unión de los símbolos
+
+# Clase que representa la bicondicional lógica
+class Biconditional(Sentence):
+    def __init__(self, left, right):
+        Sentence.validate(left)  # Valida el lado izquierdo
+        Sentence.validate(right)  # Valida el lado derecho
+        self.left = left
+        self.right = right
+
+    def __eq__(self, other):
+        return (isinstance(other, Biconditional)
+                and self.left == other.left
+                and self.right == other.right)  # Comparación de igualdad
+
+    def __hash__(self):
+        return hash(("biconditional", hash(self.left), hash(self.right)))  # Permite que las bicondicionales sean utilizadas en conjuntos
+
+    def __repr__(self):
+        return f"Biconditional({self.left}, {self.right})"  # Representación en cadena de la bicondicional
+
+    def evaluate(self, model):
+        return ((self.left.evaluate(model)
+                 and self.right.evaluate(model))
+                or (not self.left.evaluate(model)
+                    and not self.right.evaluate(model)))  # Evalúa la bicondicional
+
+    def formula(self):
+        left = Sentence.parenthesize(str(self.left))
+        right = Sentence.parenthesize(str(self.right))
+        return f"{left} <=> {right}"  # Retorna la fórmula de la bicondicional
+
+    def symbols(self):
+        return set.union(self.left.symbols(), self.right.symbols())  # Retorna la unión de los símbolos
+
+def model_check(knowledge, query):
+    """Checks if knowledge base entails query."""
+    def check_all(knowledge, query, symbols, model):
+        """Checks if knowledge base entails query, given a particular model."""
+        # If model has an assignment for each symbol
+        if not symbols:
+            # If knowledge base is true in model, then query must also be true
+            if knowledge.evaluate(model):
+                return query.evaluate(model)  # Verifica que la consulta sea verdadera
+            return True  # Si no hay símbolos restantes, considera que no se necesita más verificación
+        else:
+            # Choose one of the remaining unused symbols
+            remaining = symbols.copy()
+            p = remaining.pop()  # Escoge un símbolo no utilizado
+
+            # Create a model where the symbol is true
+            model_true = model.copy()
+            model_true[p] = True
+
+            # Create a model where the symbol is false
+            model_false = model.copy()
+            model_false[p] = False
+
+            # Ensure entailment holds in both models
+            return (check_all(knowledge, query, remaining, model_true) and
+                    check_all(knowledge, query, remaining, model_false))  # Comprueba la validez en ambos modelos
+
+    # Get all symbols in both knowledge and query
+    symbols = set.union(knowledge.symbols(), query.symbols())  # Obtiene todos los símbolos
+
+    # Check that knowledge entails query
+    return check_all(knowledge, query, symbols, dict())  # Comienza la verificación de la consulta
+
+            </code>
+        </pre>
+    </section>
+
+    <section>
+        <h2>Parcial Punto 6, Codigo estudianteunimayor.py</h2>
+        <pre>
+            <code>
+from logic import *
+
+lluvia = Symbol("lluvia")
+bbc = Symbol("bbc")
+unimayor = Symbol("unimayor")
+estudiantes = Symbol("estudiantes")
+
+conocimiento = And(
+    Implication(Not(lluvia), bbc), 
+    Or(bbc, unimayor),              
+    Not(And(bbc, unimayor)),        
+    unimayor                         
+)
+print(model_check(conocimiento, lluvia))
+print(model_check(conocimiento, bbc))
+
+            </code>
+        </pre>
+    </section>
+
+</div>
+
+</body>
+</html>
