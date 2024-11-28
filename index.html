@@ -504,6 +504,483 @@ print(model_check(conocimiento, bbc))
         </pre>
     </section>
 
+<section>
+    <h2>Reto: Caballeros</h2>
+    <p>
+        Este ejercicio consiste en resolver acertijos lógicos de "Caballeros y Truhanes". En estos acertijos, cada personaje es un caballero (que siempre dice la verdad) o un truhán (que siempre miente). El objetivo es determinar si cada personaje es un caballero o un truhán, basado en las frases que dicen.
+    </p>
+    <p>
+        El ejercicio requiere agregar conocimiento lógico a diferentes bases de conocimiento (conocimiento0, conocimiento1, conocimiento2 y conocimiento3) para resolver cuatro acertijos. Para cada acertijo, se debe formular la información lógica adecuada y luego utilizar una función de comprobación de modelos para deducir la verdad.
+    </p>
+    <p>
+        Se proporciona un archivo <code>logic.py</code> con clases para conectivas lógicas y una función <code>model_check</code> para evaluar los modelos posibles, y un archivo <code>puzzle.py</code> con símbolos proposicionales y bases de conocimiento vacías. El reto consiste en completar estas bases de conocimiento para resolver los acertijos, utilizando lógica proposicional para representar las frases de los personajes.
+    </p>
+    <p>
+        Los acertijos incluyen situaciones con diferentes números de personajes y sus respectivas frases, y la solución debe ser obtenida sin modificar el archivo <code>logic.py</code>. Es crucial que las soluciones sean correctas para aprobar el ejercicio.
+    </p>
+    <h3>Acertijos:</h3>
+    <ul>
+        <li><strong>Puzzle 0:</strong> Un solo personaje, A, dice "Soy a la vez un caballero y un bribón".</li>
+        <li><strong>Puzzle 1:</strong> Dos personajes, A y B. A dice "Los dos somos truhanes", y B no dice nada.</li>
+        <li><strong>Puzzle 2:</strong> Dos personajes, A y B. A dice "Somos de la misma clase", y B dice "Somos de distinta clase".</li>
+        <li><strong>Puzzle 3:</strong> Tres personajes, A, B y C. A dice "Soy un caballero o soy un bribón", B dice "A dijo ‘Soy un bribón’" y "C es un bribón", y C dice "A es un caballero".</li>
+    </ul>
+    <p>
+        La tarea es representar las frases lógicamente y permitir que un algoritmo resuelva los acertijos.
+    </p>
+</section>
+
+        <h2>Puzzle.py</h2>
+        <pre>
+            <code>
+# Se importa todo desde el módulo 'logic', que probablemente contiene funciones y clases necesarias
+# para resolver los rompecabezas de lógica basados en el comportamiento de caballeros y villanos.
+
+# Definimos las proposiciones lógicas para A, B y C, indicando si son caballeros (Knight) o villanos (Knave).
+AKnight = Symbol("A is a Knight")  # A es un caballero
+AKnave = Symbol("A is a Knave")    # A es un villano
+
+BKnight = Symbol("B is a Knight")  # B es un caballero
+BKnave = Symbol("B is a Knave")    # B es un villano
+
+CKnight = Symbol("C is a Knight")  # C es un caballero
+CKnave = Symbol("C is a Knave")    # C es un villano
+
+# Puzzle 0: A dice "Soy tanto un caballero como un villano".
+# El conocimiento aquí debería reflejar lo que se puede deducir de esa afirmación.
+knowledge0 = And(
+    # TODO: Definir las condiciones que corresponden a este rompecabezas
+)
+
+# Puzzle 1: A dice "Somos ambos villanos". B no dice nada.
+# El conocimiento aquí debería reflejar las implicaciones de la afirmación de A.
+knowledge1 = And(
+    # TODO: Definir las condiciones que corresponden a este rompecabezas
+)
+
+# Puzzle 2: A dice "Somos del mismo tipo". B dice "Somos de tipos diferentes".
+# Aquí también debemos definir las reglas que describen este escenario.
+knowledge2 = And(
+    # TODO: Definir las condiciones que corresponden a este rompecabezas
+)
+
+# Puzzle 3: A dice "Soy un caballero" o "Soy un villano", pero no sabemos cuál.
+# B dice "A dijo 'Soy un villano'". B también dice "C es un villano".
+# C dice "A es un caballero".
+# El conocimiento debería reflejar todas estas declaraciones contradictorias o complementarias.
+knowledge3 = And(
+    # TODO: Definir las condiciones que corresponden a este rompecabezas
+)
+
+# La función principal ejecutará los rompecabezas uno por uno
+def main():
+    # Lista de todos los símbolos involucrados en los rompecabezas.
+    symbols = [AKnight, AKnave, BKnight, BKnave, CKnight, CKnave]
+
+    # Lista de los rompecabezas con sus respectivos conocimientos.
+    puzzles = [
+        ("Puzzle 0", knowledge0),
+        ("Puzzle 1", knowledge1),
+        ("Puzzle 2", knowledge2),
+        ("Puzzle 3", knowledge3)
+    ]
+
+    # Iteramos sobre cada rompecabezas y evaluamos el conocimiento asociado.
+    for puzzle, knowledge in puzzles:
+        print(puzzle)  # Imprimimos el nombre del rompecabezas.
+        
+        # Si el conocimiento está vacío (sin implementar), lo indicamos.
+        if len(knowledge.conjuncts) == 0:
+            print("    Not yet implemented.")
+        else:
+            # Si el conocimiento está implementado, verificamos cuál de los símbolos (caballeros o villanos)
+            # es consistente con el conocimiento utilizando la función model_check.
+            for symbol in symbols:
+                if model_check(knowledge, symbol):  # Verifica si el símbolo es verdadero según el conocimiento.
+                    print(f"    {symbol}")  # Imprime el símbolo si es consistente con el conocimiento.
+
+# El bloque 'if' asegura que la función 'main' solo se ejecute cuando este script se ejecute directamente.
+if __name__ == "__main__":
+    main()
+
+
+            </code>
+        </pre>
+    </section>
+<section>
+    <h2>Solucion Reto - Caballeros</h2>
+    <p>Este ejercicio consiste en resolver acertijos lógicos de "Caballeros y Truhanes". En estos acertijos, cada personaje es un caballero (que siempre dice la verdad) o un truhán (que siempre miente). El objetivo es determinar si cada personaje es un caballero o un truhán, basado en las frases que dicen. Aquí se presentan las soluciones a los acertijos:</p>
+
+    <article>
+        <h3>Acertijo 0: Un solo personaje, A, dice "Soy tanto un caballero como un bribón".</h3>
+        <p><strong>Análisis:</strong></p>
+        <p>Si A es un caballero, entonces su afirmación debe ser verdadera, es decir, A debe ser tanto caballero como bribón. Pero esto es una contradicción, ya que A no puede ser ambos al mismo tiempo. Por lo tanto, A debe ser un truhán.</p>
+        <p><strong>Lógica:</strong></p>
+        <p>La afirmación de A es falsa, por lo que A debe ser un truhán. Si A es un truhán, su afirmación "Soy tanto un caballero como un bribón" es falsa, lo que significa que A no puede ser caballero.</p>
+        <p><strong>Solución:</strong></p>
+        <p>A es un truhán.</p>
+    </article>
+
+    <article>
+        <h3>Acertijo 1: Dos personajes, A y B. A dice "Los dos somos truhanes", y B no dice nada.</h3>
+        <p><strong>Análisis:</strong></p>
+        <p>Si A es un caballero, entonces la afirmación "Los dos somos truhanes" debe ser verdadera. Esto implicaría que tanto A como B serían truhanes, lo cual es una contradicción porque A no puede ser un caballero y un truhán al mismo tiempo. Por lo tanto, A no puede ser un caballero, y debe ser un truhán. Si A es un truhán, su afirmación "Los dos somos truhanes" es falsa, lo que significa que al menos uno de los dos no puede ser un truhán. Como A ya es un truhán, entonces B debe ser un caballero.</p>
+        <p><strong>Lógica:</strong></p>
+        <p>A es un truhán y B es un caballero.</p>
+        <p><strong>Solución:</strong></p>
+        <p>A es un truhán, B es un caballero.</p>
+    </article>
+
+    <article>
+        <h3>Acertijo 2: Dos personajes, A y B. A dice "Somos de la misma clase", y B dice "Somos de distinta clase".</h3>
+        <p><strong>Análisis:</strong></p>
+        <p>Si A es un caballero, entonces su afirmación "Somos de la misma clase" debe ser verdadera, lo que implica que A y B son del mismo tipo (ambos caballeros o ambos truhanes). Si A es un truhán, entonces su afirmación "Somos de la misma clase" es falsa, lo que implica que A y B no son del mismo tipo (uno es caballero y el otro es truhán). B dice "Somos de distinta clase". Si B es un caballero, entonces la afirmación de B debe ser verdadera, lo que implica que A y B son de distinta clase. Si B es un truhán, entonces su afirmación es falsa, lo que implica que A y B deben ser de la misma clase.</p>
+        <p><strong>Posibles casos:</strong></p>
+        <ul>
+            <li><strong>Si A y B son caballeros:</strong> A dice la verdad, pero B también dice la verdad, lo que genera una contradicción.</li>
+            <li><strong>Si A es caballero y B es truhán:</strong> A dice la verdad, pero B miente, lo que resulta en una contradicción.</li>
+            <li><strong>Si A y B son truhanes:</strong> A miente, pero B también miente, lo que es consistente.</li>
+        </ul>
+        <p><strong>Solución:</strong></p>
+        <p>A es un truhán y B es un truhán.</p>
+    </article>
+
+    <article>
+        <h3>Acertijo 3: Tres personajes, A, B y C. A dice "Soy un caballero o soy un bribón", pero no sabemos cuál. B dice "A dijo 'Soy un bribón'", y "C es un bribón". C dice "A es un caballero".</h3>
+        <p><strong>Análisis:</strong></p>
+        <p>A dice "Soy un caballero o soy un bribón", lo cual es una afirmación verdadera, ya que A es necesariamente uno de esos dos. Si A es un caballero, entonces su afirmación es verdadera. Si A es un truhán, entonces su afirmación es falsa, lo que significa que A no puede ser ni caballero ni bribón, lo cual es una contradicción. Por lo tanto, A debe ser un caballero. B dice que A dijo "Soy un bribón". Si B es un caballero, esta afirmación debe ser verdadera, pero ya sabemos que A no es un bribón, lo que significa que B debe ser un truhán. B también dice que C es un bribón. Como B es un truhán, su afirmación es falsa, lo que significa que C no es un bribón, por lo que C debe ser un caballero. C dice "A es un caballero", lo cual es cierto si C es un caballero, por lo que C es un caballero.</p>
+        <p><strong>Lógica:</strong></p>
+        <p>A es un caballero, B es un truhán, C es un caballero.</p>
+        <p><strong>Solución:</strong></p>
+        <p>A es un caballero, B es un truhán, C es un caballero.</p>
+    </article>
+
+    <p><strong>soluciones:</strong></p>
+    <ul>
+        <li><strong>Acertijo 0:</strong> A es un truhán.</li>
+        <li><strong>Acertijo 1:</strong> A es un truhán, B es un caballero.</li>
+        <li><strong>Acertijo 2:</strong> A es un truhán, B es un truhán.</li>
+        <li><strong>Acertijo 3:</strong> A es un caballero, B es un truhán, C es un caballero.</li>
+    </ul>
+</section>
+
+    <section>
+        <h2>Logic.py</h2>
+          <p>
+            El código que has proporcionado implementa una estructura de clases para trabajar con lógica proposicional, especialmente en el contexto de modelar y evaluar expresiones lógicas en un sistema de razonamiento. A continuación, te haré un resumen detallado de cada parte y de cómo funciona el código.
+        </p>
+        <pre>
+            <code>
+import itertools  # Importa la librería itertools, aunque no se está utilizando en este código
+
+# Clase base que representa una sentencia lógica en la lógica proposicional.
+class Sentence():
+    # Método para evaluar la sentencia lógica en un modelo.
+    def evaluate(self, model):
+        """Evalúa la sentencia lógica."""  
+        raise Exception("nothing to evaluate")  # Lanza una excepción si no se implementa en las subclases
+
+    # Método que devuelve la fórmula en forma de cadena que representa la sentencia lógica.
+    def formula(self):
+        """Devuelve la fórmula en cadena de la sentencia lógica."""  
+        return ""
+
+    # Método que devuelve un conjunto de todos los símbolos que aparecen en la sentencia.
+    def symbols(self):
+        """Devuelve un conjunto de todos los símbolos en la sentencia lógica."""  
+        return set()
+
+    # Método de clase para validar que un objeto es una instancia de Sentence.
+    @classmethod
+    def validate(cls, sentence):
+        if not isinstance(sentence, Sentence):
+            raise TypeError("must be a logical sentence")  # Lanza un error si no es una instancia de Sentence
+
+    # Método de clase que se asegura de que una expresión esté entre paréntesis si es necesario.
+    @classmethod
+    def parenthesize(cls, s):
+        """Asegura que la expresión esté entre paréntesis si es necesario."""  
+        
+        # Función interna que verifica si una cadena tiene paréntesis balanceados.
+        def balanced(s):
+            count = 0
+            for c in s:
+                if c == "(":
+                    count += 1
+                elif c == ")":
+                    if count <= 0:
+                        return False
+                    count -= 1
+            return count == 0  # Devuelve True si los paréntesis están balanceados
+
+        # Si la expresión ya está balanceada o es una letra, no es necesario agregar paréntesis.
+        if not len(s) or s.isalpha() or (
+            s[0] == "(" and s[-1] == ")" and balanced(s[1:-1])
+        ):
+            return s
+        else:
+            return f"({s})"  # Agrega paréntesis si no es una expresión simple o balanceada
+
+
+# Clase que representa un símbolo en la lógica proposicional.
+class Symbol(Sentence):
+    def __init__(self, name):
+        self.name = name  # Inicializa el símbolo con un nombre
+
+    # Comparación entre dos objetos Symbol. Son iguales si tienen el mismo nombre.
+    def __eq__(self, other):
+        return isinstance(other, Symbol) and self.name == other.name
+
+    # Método para obtener el valor hash del símbolo. Necesario para usarlo en sets y dicts.
+    def __hash__(self):
+        return hash(("symbol", self.name))
+
+    # Representación del símbolo como una cadena.
+    def __repr__(self):
+        return self.name
+
+    # Evalúa el símbolo en un modelo (diccionario). Devuelve True o False según el valor asignado.
+    def evaluate(self, model):
+        try:
+            return bool(model[self.name])  # Devuelve el valor lógico del modelo para este símbolo
+        except KeyError:
+            raise Exception(f"variable {self.name} not in model")  # Si el símbolo no está en el modelo, lanza un error
+
+    # Devuelve la fórmula en cadena que representa el símbolo (su nombre).
+    def formula(self):
+        return self.name
+
+    # Devuelve el conjunto de símbolos involucrados, en este caso solo el símbolo mismo.
+    def symbols(self):
+        return {self.name}
+
+
+# Clase que representa la negación de una sentencia lógica.
+class Not(Sentence):
+    def __init__(self, operand):
+        Sentence.validate(operand)  # Valida que el operando sea una sentencia lógica
+        self.operand = operand
+
+    # Comparación entre dos objetos Not. Son iguales si tienen el mismo operando.
+    def __eq__(self, other):
+        return isinstance(other, Not) and self.operand == other.operand
+
+    # Método para obtener el valor hash de la negación.
+    def __hash__(self):
+        return hash(("not", hash(self.operand)))
+
+    # Representación en cadena de la negación.
+    def __repr__(self):
+        return f"Not({self.operand})"
+
+    # Evalúa la negación en un modelo.
+    def evaluate(self, model):
+        return not self.operand.evaluate(model)
+
+    # Devuelve la fórmula en cadena de la negación.
+    def formula(self):
+        return "¬" + Sentence.parenthesize(self.operand.formula())
+
+    # Devuelve el conjunto de símbolos involucrados en la negación.
+    def symbols(self):
+        return self.operand.symbols()
+
+
+# Clase que representa la conjunción (AND) de varias sentencias lógicas.
+class And(Sentence):
+    def __init__(self, *conjuncts):
+        for conjunct in conjuncts:
+            Sentence.validate(conjunct)  # Valida cada uno de los componentes de la conjunción
+        self.conjuncts = list(conjuncts)
+
+    # Comparación entre dos objetos And. Son iguales si tienen los mismos componentes.
+    def __eq__(self, other):
+        return isinstance(other, And) and self.conjuncts == other.conjuncts
+
+    # Método para obtener el valor hash de la conjunción.
+    def __hash__(self):
+        return hash(
+            ("and", tuple(hash(conjunct) for conjunct in self.conjuncts))
+        )
+
+    # Representación en cadena de la conjunción.
+    def __repr__(self):
+        conjunctions = ", ".join(
+            [str(conjunct) for conjunct in self.conjuncts]
+        )
+        return f"And({conjunctions})"
+
+    # Agrega un nuevo componente a la conjunción.
+    def add(self, conjunct):
+        Sentence.validate(conjunct)
+        self.conjuncts.append(conjunct)
+
+    # Evalúa la conjunción en un modelo (debe ser verdadera si todos los componentes son verdaderos).
+    def evaluate(self, model):
+        return all(conjunct.evaluate(model) for conjunct in self.conjuncts)
+
+    # Devuelve la fórmula en cadena de la conjunción.
+    def formula(self):
+        if len(self.conjuncts) == 1:
+            return self.conjuncts[0].formula()
+        return " ∧ ".join([Sentence.parenthesize(conjunct.formula())
+                           for conjunct in self.conjuncts])
+
+    # Devuelve el conjunto de símbolos involucrados en la conjunción.
+    def symbols(self):
+        return set.union(*[conjunct.symbols() for conjunct in self.conjuncts])
+
+
+# Clase que representa la disyunción (OR) de varias sentencias lógicas.
+class Or(Sentence):
+    def __init__(self, *disjuncts):
+        for disjunct in disjuncts:
+            Sentence.validate(disjunct)  # Valida cada uno de los componentes de la disyunción
+        self.disjuncts = list(disjuncts)
+
+    # Comparación entre dos objetos Or. Son iguales si tienen los mismos componentes.
+    def __eq__(self, other):
+        return isinstance(other, Or) and self.disjuncts == other.disjuncts
+
+    # Método para obtener el valor hash de la disyunción.
+    def __hash__(self):
+        return hash(
+            ("or", tuple(hash(disjunct) for disjunct in self.disjuncts))
+        )
+
+    # Representación en cadena de la disyunción.
+    def __repr__(self):
+        disjuncts = ", ".join([str(disjunct) for disjunct in self.disjuncts])
+        return f"Or({disjuncts})"
+
+    # Evalúa la disyunción en un modelo (debe ser verdadera si al menos uno de los componentes es verdadero).
+    def evaluate(self, model):
+        return any(disjunct.evaluate(model) for disjunct in self.disjuncts)
+
+    # Devuelve la fórmula en cadena de la disyunción.
+    def formula(self):
+        if len(self.disjuncts) == 1:
+            return self.disjuncts[0].formula()
+        return " ∨  ".join([Sentence.parenthesize(disjunct.formula())
+                            for disjunct in self.disjuncts])
+
+    # Devuelve el conjunto de símbolos involucrados en la disyunción.
+    def symbols(self):
+        return set.union(*[disjunct.symbols() for disjunct in self.disjuncts])
+
+
+# Clase que representa una implicación lógica (A => B).
+class Implication(Sentence):
+    def __init__(self, antecedent, consequent):
+        Sentence.validate(antecedent)  # Valida el antecedente
+        Sentence.validate(consequent)  # Valida el consecuente
+        self.antecedent = antecedent
+        self.consequent = consequent
+
+    # Comparación entre dos objetos Implication. Son iguales si tienen el mismo antecedente y consecuente.
+    def __eq__(self, other):
+        return (isinstance(other, Implication)
+                and self.antecedent == other.antecedent
+                and self.consequent == other.consequent)
+
+    # Método para obtener el valor hash de la implicación.
+    def __hash__(self):
+        return hash(("implies", hash(self.antecedent), hash(self.consequent)))
+
+    # Representación en cadena de la implicación.
+    def __repr__(self):
+        return f"Implication({self.antecedent}, {self.consequent})"
+
+    # Evalúa la implicación en un modelo.
+    def evaluate(self, model):
+        return not self.antecedent.evaluate(model) or self.consequent.evaluate(model)
+
+    # Devuelve la fórmula en cadena de la implicación.
+    def formula(self):
+        return f"({self.antecedent.formula()} => {self.consequent.formula()})"
+
+    # Devuelve el conjunto de símbolos involucrados en la implicación.
+    def symbols(self):
+        return self.antecedent.symbols().union(self.consequent.symbols())
+
+
+# Clase que representa la bicondicionalidad lógica (A <=> B).
+
+class Biconditional(Sentence):
+    def __init__(self, left, right):
+        Sentence.validate(left)
+        Sentence.validate(right)
+        self.left = left
+        self.right = right
+
+    def __eq__(self, other):
+        return (isinstance(other, Biconditional)
+                and self.left == other.left
+                and self.right == other.right)
+
+    def __hash__(self):
+        return hash(("biconditional", hash(self.left), hash(self.right)))
+
+    def __repr__(self):
+        return f"Biconditional({self.left}, {self.right})"
+
+    def evaluate(self, model):
+        return ((self.left.evaluate(model)
+                 and self.right.evaluate(model))
+                or (not self.left.evaluate(model)
+                    and not self.right.evaluate(model)))
+
+    def formula(self):
+        left = Sentence.parenthesize(str(self.left))
+        right = Sentence.parenthesize(str(self.right))
+        return f"{left} <=> {right}"
+
+    def symbols(self):
+        return set.union(self.left.symbols(), self.right.symbols())
+
+
+def model_check(knowledge, query):
+    """Checks if knowledge base entails query."""
+
+    def check_all(knowledge, query, symbols, model):
+        """Checks if knowledge base entails query, given a particular model."""
+
+        # If model has an assignment for each symbol
+        if not symbols:
+
+            # If knowledge base is true in model, then query must also be true
+            if knowledge.evaluate(model):
+                return query.evaluate(model)
+            return True
+        else:
+
+            # Choose one of the remaining unused symbols
+            remaining = symbols.copy()
+            p = remaining.pop()
+
+            # Create a model where the symbol is true
+            model_true = model.copy()
+            model_true[p] = True
+
+            # Create a model where the symbol is false
+            model_false = model.copy()
+            model_false[p] = False
+
+            # Ensure entailment holds in both models
+            return (check_all(knowledge, query, remaining, model_true) and
+                    check_all(knowledge, query, remaining, model_false))
+
+    # Get all symbols in both knowledge and query
+    symbols = set.union(knowledge.symbols(), query.symbols())
+
+    # Check that knowledge entails query
+    return check_all(knowledge, query, symbols, dict())
+
+
+            </code>
+        </pre>
+    </section>
+
 </div>
 
 </body>
